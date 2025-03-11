@@ -33,7 +33,11 @@ const JoinWaitlistInput = () => {
     ev.preventDefault();
     if (email) {
       mutate({ email });
-      addToast({ description: "Hold a breath", icon: <Spinner size="sm" /> });
+      addToast({
+        description: "Hold a breath",
+        icon: <Spinner size="sm" />,
+        timeout: 3000,
+      });
     }
   };
 
