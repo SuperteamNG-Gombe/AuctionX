@@ -41,7 +41,11 @@ async function dbConnect(): Promise<typeof mongoose> {
     };
 
     cached.promise = mongoose
-      .connect(MONGODB_URI as string, opts)
+      .connect(
+        `mongodb+srv://Ademola:4cLc7jPEpjbjwyyx@cluster0.yszpr.mongodb.net/auctiondb?retryWrites=true&
+w=majorit&`,
+        opts
+      )
       .then((mongoose) => {
         return mongoose;
       });

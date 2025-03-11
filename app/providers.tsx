@@ -34,7 +34,7 @@ export function Providers({ children, themeProps }: ProvidersProps) {
           {children}
         </QueryClientProvider>
       </NextThemesProvider>
-      <ToastProvider />
+      <ToastProvider maxVisibleToasts={1} />
     </HeroUIProvider>
   );
 }

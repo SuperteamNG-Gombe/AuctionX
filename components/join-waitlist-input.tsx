@@ -9,11 +9,13 @@ import { Spinner } from "@heroui/spinner";
 import useAddUserToWaitListMutation from "@/app/services/mutations/use-add-user-to-waitlist-mutation";
 
 const JoinWaitlistInput = () => {
+  const [email, setEmail] = useState<string>();
+
   const { mutate, isPending } = useAddUserToWaitListMutation({
     onSuccess(data) {
       addToast({
         title: "Success",
-        description: `${data.email} added to waitlist`,
+        description: `${email} added to waitlist`,
         color: "success",
       });
     },
@@ -21,18 +23,17 @@ const JoinWaitlistInput = () => {
     onError(error) {
       addToast({
         title: "Error",
-        description: (error as any).response.data.message,
+        description: (error as any).response.data.error,
         color: "danger",
       });
     },
   });
 
-  const [email, setEmail] = useState<string>();
-
   const handleSubmitEmail: FormEventHandler<HTMLFormElement> = (ev) => {
     ev.preventDefault();
     if (email) {
       mutate({ email });
+      addToast({ description: "Hold a breath", icon: <Spinner size="sm" /> });
     }
   };
 
