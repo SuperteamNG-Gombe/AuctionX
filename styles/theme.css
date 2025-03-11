@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import the fonts */
+:root {
+  /* Font usage variables */
+  --font-display: var(--font-orbitron);
+  --font-body: var(--font-exo);
+  --font-accent: var(--font-rajdhani);
+
+  /* Font sizes */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+
+  /* Font weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  /* Line heights */
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* Primary colors (60%) */
+  --primary-color: #0a2540;
+  --primary-dark: #071a2d;
+  --primary-light: #1c3756;
+
+  /* Secondary colors (30%) */
+  --secondary-color: #00d1b2;
+  --secondary-dark: #00a68d;
+  --secondary-light: #20e6c7;
+
+  /* Accent colors (10%) */
+  --accent-color: #9c27b0;
+  --accent-dark: #7b1fa2;
+  --accent-light: #ba68c8;
+
+  /* Neutral colors */
+  --neutral-light: #f4f4f4;
+  --neutral-dark: #1e1e1e;
+
+  /* Gradient colors */
+  --gradient-primary: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  --gradient-accent: linear-gradient(
+    45deg,
+    var(--secondary-color),
+    var(--accent-color)
+  );
+  --gradient-full: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color),
+    var(--accent-color),
+    var(--neutral-dark)
+  );
+}
+
+/* Dark mode variables */
+.dark {
+  /* Inverted/adjusted colors for dark mode */
+  --primary-color: #1c3756;
+  --primary-dark: #0a2540;
+  --primary-light: #2a4a70;
+
+  --secondary-color: #00d1b2;
+  --secondary-dark: #00a68d;
+  --secondary-light: #20e6c7;
+
+  --accent-color: #ba68c8;
+  --accent-dark: #9c27b0;
+  --accent-light: #ce93d8;
+
+  --neutral-light: #2a2a2a;
+  --neutral-dark: #f4f4f4;
+}
+
+/* Apply fonts to common elements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+}
+
+body,
+p,
+span,
+div,
+input,
+textarea,
+select {
+  font-family: var(--font-body);
+}
+
+button,
+.accent-text,
+blockquote {
+  font-family: var(--font-accent);
+}
