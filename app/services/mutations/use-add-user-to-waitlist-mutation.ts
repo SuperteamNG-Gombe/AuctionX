@@ -10,8 +10,8 @@ interface Credentials {
   email: string;
 }
 
-const purchase = async (credentials: Credentials): Promise<any> => {
-  const response = await api.post("waitlist", credentials);
+const joinWaitlist = async (credentials: Credentials): Promise<any> => {
+  const response = await api.post("/waitlist", credentials);
 
   return response.data;
 };
@@ -21,7 +21,7 @@ const useAddUserToWaitListMutation = (
 ): UseMutationResult<any, unknown, Credentials> => {
   return useMutation({
     mutationKey: ["waitlist"],
-    mutationFn: (credentials: Credentials) => purchase(credentials),
+    mutationFn: joinWaitlist,
     ...props,
   });
 };

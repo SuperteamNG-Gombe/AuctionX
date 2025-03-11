@@ -35,7 +35,7 @@ const JoinWaitlistInput = () => {
   };
 
   return (
-    <form className="relative w-[70%]" onSubmit={handleSubmitEmail}>
+    <form className="relative w-full" onSubmit={handleSubmitEmail}>
       <Input
         className="w-full"
         placeholder="example@gmail.com"
