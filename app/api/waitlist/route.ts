@@ -10,6 +10,6 @@ export async function POST(req: Request) {
     const response = await addToWaitlist(body);
     return NextResponse.json({ message: response });
   } catch (error: any) {
-    return NextResponse.json({ message: `${error?.message}` });
+    return NextResponse.json({ error: `${error?.message}` });
   }
 }
