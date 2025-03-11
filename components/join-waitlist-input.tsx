@@ -4,10 +4,12 @@ import { Button } from "@heroui/button";
 import { Input } from "@heroui/input";
 import { addToast } from "@heroui/toast";
 
+import { Spinner } from "@heroui/spinner";
+
 import useAddUserToWaitListMutation from "@/app/services/mutations/use-add-user-to-waitlist-mutation";
 
 const JoinWaitlistInput = () => {
-  const { mutate } = useAddUserToWaitListMutation({
+  const { mutate, isPending } = useAddUserToWaitListMutation({
     onSuccess(data) {
       addToast({
         title: "Success",
@@ -45,10 +47,12 @@ const JoinWaitlistInput = () => {
         onChange={(ev) => setEmail(ev.target.value)}
       />
       <Button
-        className="absolute -translate-y-1/2 rounded-full top-1/2 right-2"
+        className="absolute flex items-center gap-2 -translate-y-1/2 rounded-full top-1/2 right-2"
+        disabled={isPending}
         type="submit"
         variant="bordered"
       >
+        {isPending && <Spinner size="sm" />}
         Join
       </Button>
     </form>
